@@ -1,0 +1,10 @@
+We introduce DDE-Solver, a Maple package designed for solving Discrete Differential
+Equations (DDEs). These equations are functional equations relating algebraically a formal
+power series F(t, u) with polynomial coefficients in a “catalytic” variable u, with special-
+izations of it with respect to the catalytic variable. Such equations appear in
+enumerative combinatorics, for instance in the enumeration of maps. Bousquet-Mélou and
+Jehanne showed in 2006 that when these equations are of a fixed point type in F, then F is
+an algebraic series. In the same paper, they proposed a systematic method for computing
+annihilating polynomials of these series. Bostan, Safey El Din and the author of this article
+recently designed new efficient algorithms for computing these witnesses of algebraicity. 
+This Maple package contains the implementations of these new algorithms.
