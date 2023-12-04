@@ -7,7 +7,7 @@ Jehanne showed in 2006 that when these equations are of a fixed point type in F,
 an algebraic series. In the same paper, they proposed a systematic method for computing
 annihilating polynomials of these series. Bostan, Safey El Din and the author of this package
 recently designed new efficient algorithms for computing these witnesses of algebraicity. 
-This Maple package contains the implementations of these new algorithms.
+Ddesolver contains the implementations of these new algorithms.
 
 Have a look at the tutorial paper https://mathexp.eu/notarantonio/papers/ddesolver.pdf 
 and at the dedicated webpage https://mathexp.eu/notarantonio/ddesolver/
