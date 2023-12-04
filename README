@@ -10,4 +10,4 @@ recently designed new efficient algorithms for computing these witnesses of alge
 The package ddesolver contains the implementations of these new algorithms.
 
 Have a look at the tutorial paper https://mathexp.eu/notarantonio/papers/ddesolver.pdf 
-and at the dedicated webpage https://mathexp.eu/notarantonio/ddesolver/
+
