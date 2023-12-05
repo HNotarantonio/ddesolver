@@ -4,12 +4,12 @@ We introduce **ddesolver**, a Maple package designed for solving *Discrete Diffe
 Equations (DDEs)*. These equations are functional equations relating algebraically a formal
 power series $F(t, u)$ with polynomial coefficients in a “catalytic” variable $u$, with
 specializations of it with respect to the catalytic variable. Such equations appear in
-enumerative combinatorics, for instance in the enumeration of maps. Bousquet-Mélou and
-Jehanne showed in $2006$ that when these equations are of a fixed point type in $F$, then $F$ is
+enumerative combinatorics, for instance in the enumeration of maps. Mireille Bousquet-Mélou and
+Arnaud Jehanne showed in $2006$ that when these equations are of a fixed point type in $F$, then $F$ is
 an *algebraic series* (that is, there exists a nonzero $R_u\in\mathbb{Q}[X, t, u]$ such that $R_u(F(t, u), t, u)=0$).
 In the same paper, they proposed a systematic method for computing
 annihilating polynomials of these series: note that the usual interest lies in the algebraicity of 
-one of the specialized series, say of $F(t, 1)$. Bostan, Safey El Din and the author of this package
+one of the specialized series, say of $F(t, 1)$. Alin Bostan, Mohab Safey El Din and the author of this package
 designed in $2023$ new efficient algorithms for computing these witnesses of algebraicity. 
 
 The package **ddesolver** contains the implementations of these new algorithms.
