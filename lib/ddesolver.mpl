@@ -9,7 +9,7 @@ export annihilating_polynomial:
 local Euclide, rational_interpolation, rat_interp, stickelberger2modp, elim_without_dup_modp, 
 Reconstruction_Elimination_Pol_QQ1, elim_pol_1dim_main, elim_pol_1dim,
 FormatOutputMSolve,GetRootsFromMSolve,ToMSolve,GetOptions,MSolveGroebner,MSolveelim,
-MSolveRealRoots, infolevel, pol_eval, remainder, linearize, GenerateDAC, block_elim_lex,
+MSolveRealRoots, pol_eval, remainder, linearize, GenerateDAC, block_elim_lex,
 brut_force_elim, hgp, elim_without_dup, stickelberger2, generate:
 
 
@@ -28,9 +28,9 @@ brut_force_elim, hgp, elim_without_dup, stickelberger2, generate:
 #	"DDE-Solver: A Maple package for Discrete Differential Equations".
 #
 #	Regarding Grobner bases computations, we use the command by default Groebner[Basis].
-#	It is however possible to use as in the tutorial paper the C library msolve,
-#	available at https://msolve.lip6.fr/ by Berthomieu, Eder and Safey El Din.
-#	For people whishing to use msolve, it is of course possible to modify
+#	It is however possible to use as in the tutorial paper the C library msolve by 
+#	Berthomieu, Eder and Safey El Din, available at https://msolve.lip6.fr/ 
+#	For people whishing to use msolve, it is possible to modify
 #	(and use for private purposes only) the present worksheet by commenting
 #	out the corresponding lines, then executing the file build.mpl
 
@@ -41,8 +41,7 @@ brut_force_elim, hgp, elim_without_dup, stickelberger2, generate:
 
 
 
-kernelopts(numcpus = 1);
-kernelopts(numcpus = 1);
+kernelopts(numcpus = 2);
 infolevel[Groebner] := 3;
 
 
@@ -520,7 +519,7 @@ elim_pol_1dim := proc(S, principal_var, second_var)
 	#	   end if;
 	#	end if;
 		if nops(L) > 1 then
-		      # If two lifts corresponds successively:
+		      # If two lifts correspond successively:
 		   if PolQQ2 = PolQQ1 and PolQQ2 <> FAIL then
 		      	    sd := time[real]() - sd;
 	                    return numer(factor(numer(PolQQ2)))
@@ -615,7 +614,7 @@ elim_without_dup_modp := proc(S, principal_var, k, p)
 #	Output:
 #		a (possibly equal to 0) elimination polynomial of F(t, a)
 #		   	     	   in Fp[t, z_0]
-#	Assumptions: The fiber of interest shall be finite in order to output a non-zero
+#	Assumptions: The fiber of interest shall be finite to output a non-zero
 #		     bivariate polynomial.
 #
 #	Example: (for solving 3-constellations)
@@ -635,8 +634,8 @@ elim_without_dup_modp := proc(S, principal_var, k, p)
 	local H, pol, F, ct, g_list, R, j, Ru;
 	LeadingCoeffsx, LeadingCoeffsu := [], [];
 	
-	### The following lines allow us to determine inequations in order just to
-	### focus on the points in the projection (and not in the Zariski closure of it).
+	### The following lines allow us to determine inequations in order to
+	### focus on the points in the projection (and not on the Zariski closure of it).
 	Gm := block_elim_lex(S, [m], [x, u, op(indets(S) minus {m, x, u})],
 	      				   	p, 1):
 	Gx := block_elim_lex(Gm, [x], [u, op(indets(Gm) minus {x, u})], p, 0):
@@ -666,7 +665,7 @@ elim_without_dup_modp := proc(S, principal_var, k, p)
 	
 
  ### Choose one between the next two lines depending on if you are using msolve or not.
- ### Possible comments can be commented out in order to take into account the saturations
+ ### Possible comments can be commented out to take into account the saturation
  ### and thus the points that belong only to the projection (not to its Zariski closure).
  
 
@@ -761,7 +760,7 @@ elim_without_dup_modp := proc(S, principal_var, k, p)
 			 tdeg(m, op(indets(Gu) minus {principal_var}), principal_var),
 			 characteristic = p);
 
-	      ## assuming that H generates an ideal of dimension at most -1 or 0, compute
+	      ## Assuming that H generates an ideal of dimension at most -1 or 0, compute
 	      ## the elimination polynomial in the variable principal_var.
 	    pol := op(Groebner[FGLM](H, tdeg(m, op(indets(Gu) minus {principal_var}),
 	    	principal_var), plex(m, op(indets(Gu) minus {principal_var}), principal_var),
@@ -793,7 +792,7 @@ elim_without_dup_modp := proc(S, principal_var, k, p)
 
 		     # computation of a Groebner basis respecting all the equations
 		     # and saturation conditions.
- ### Choose one between the next two commands depending on if you are using msolve or not.
+ ### Choose one between the next two commands depending on whether you are using msolve or not.
 	    (* H := MSolveGroebner([op(Gu), op(LTlowdegrees), op(g_list[i-ct+1][1]),
 	      	 			 m*Ru*(g_list[i-ct+1][2][1]*rand() +
 					 add(g_list[i-ct+1][2][2][j]*rand(),
@@ -816,13 +815,13 @@ elim_without_dup_modp := proc(S, principal_var, k, p)
 			tdeg(m, op(indets(Gu) minus {principal_var}), principal_var),
 			characteristic = p):
 	      
-	      ## assuming that H generates an ideal of dimension at most -1 or 0, compute
+	      ## Assuming that H generates an ideal of dimension at most -1 or 0, compute
 	      ## the elimination polynomial in the variable principal_var.
 	    pol := op(Groebner[FGLM](H, tdeg(m, op(indets(Gu) minus {principal_var}),
 	    	principal_var), plex(m, op(indets(Gu) minus {principal_var}), principal_var),
 		characteristic = p,
 	    	stoppingcondition = (s ->has(s, indets(H) minus	{principal_var}))));
-	      ## select only the squarefree part as we are only interested in an annihilating
+	      ## Select only the squarefree part as we are only interested in an annihilating
 	      ## polynomial.
 	      
 	    F := Sqrfree(pol) mod p;
@@ -871,7 +870,7 @@ elim_without_dup := proc(S, principal_var, second_var, k)
 #	       k: order of the DDE,
 #	Output:
 #		
-#	Assumptions: The fiber of interest shall be finite in order to output a non-zero
+#	Assumptions: The fiber of interest shall be finite to output a non-zero
 #		     bivariate polynomial.
 #
 #	Example: (for solving 3-constellations)
