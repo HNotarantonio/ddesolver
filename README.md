@@ -15,7 +15,7 @@ designed in $2023$ new efficient algorithms for computing these witnesses of alg
 The package **ddesolver** contains the implementations of these new algorithms.
 
 Want to know more about ddesolver? Have a look at the dedicated [tutorial paper](https://mathexp.eu/notarantonio/papers/ddesolver.pdf)!   
-
+Want to more about the algorithms? Have a look [here](https://mathexp.eu/notarantonio/papers/reviewed_BoNoSa2023--HAL-ARXIV.pdf)!
 
 # **INSTALLATION**
 
