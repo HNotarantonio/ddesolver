@@ -41,13 +41,15 @@ in order to load and use the package.
    $F(t, u) = 1 + tuF(t, u)^3 + tu(2F(t, u) + F(t, 1))\frac{F(t, u)-F(t, 1)}{u-1}
             + tu\frac{F(t, u) - F(t, 1) - (u-1)\partial_uF(t, 1)}{(u-1)^2}.$
             
-    Multiplying the above functional equation by (u-1)^2 yields
+  Multiplying the above functional equation by (u-1)^2 yields
      $0=(u-1)^2(1-F(t, u) + tuF(t, u)^3) + tu(u-1)(2F(t, u) + F(t, 1))(F(t, u)-F(t, 1))
       +  tu(F(t, u) - F(t, 1) - (u-1)\partial_uF(t, 1)).$
-      Note that the above rewrites in the form $P(F(t, u), F(t, 1), \partial_uF(t, 1), t, u)=0$
-      for some $P\in\mathbb{Q}[x, z_0, z_1, t, u]$ given by
-    $P := (u-1)^2(1-x+tux^3) +tu(u-1)(2x+z_0)(x-z_0)
-    +tu(x-z_0-(u-1)z_1)$. We continue the analysis with Maple
+      
+  Note that the above rewrites in the form $P(F(t, u), F(t, 1), \partial_uF(t, 1), t, u)=0$
+  for some $P\in\mathbb{Q}[x, z_0, z_1, t, u]$ given by
+    $P := (u-1)^2(1-x+tux^3) +tu(u-1)(2x+z_0)(x-z_0)+tu(x-z_0-(u-1)z_1)$.
+    
+  We continue the analysis with Maple
     
     P := (u-1)^2(1-x+tux^3) +tu(u-1)(2x+z_0)(x-z_0)+tu(x-z_0-(u-1)z_1):
     
