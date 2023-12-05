@@ -6,7 +6,7 @@ power series $F(t, u)$ with polynomial coefficients in a “catalytic” variabl
 specializations of it with respect to the catalytic variable. Such equations appear in
 enumerative combinatorics, for instance in the enumeration of maps. Bousquet-Mélou and
 Jehanne showed in $2006$ that when these equations are of a fixed point type in $F$, then $F$ is
-an *algebraic series* (that is, there exists $R_u\in\mathbb{Q}[X, t, u]\setminus \{0\}$ such that $R_u(F(t, u), t, u)=0$).
+an *algebraic series* (that is, there exists a nonzero $R_u\in\mathbb{Q}[X, t, u]$ such that $R_u(F(t, u), t, u)=0$).
 In the same paper, they proposed a systematic method for computing
 annihilating polynomials of these series: note that the usual interest lies in the algebraicity of 
 one of the specialized series, say of $F(t, 1)$. Bostan, Safey El Din and the author of this package
