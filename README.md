@@ -52,7 +52,7 @@ in order to load and use the package.
      \end{align*}
   ```
       
-  Note that the above rewrites in the form $P(F(t, u), F(t, 1), \partial_uF(t, 1), t, u)=0$,
+  The above rewrites in the form $P(F(t, u), F(t, 1), \partial_uF(t, 1), t, u)=0$,
   where $P\in\mathbb{Q}[x, z_0, z_1, t, u]$ is given by
   
   ```math
