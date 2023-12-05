@@ -48,7 +48,7 @@ P(F(t, u), F(t, 1), \partial_uF(t, 1), \ldots, \partial_u^{k-1}F(t, 1), t, u)=0,
 
 Note that the specialization of the series can be at any point of $a\in\mathbb{Q}$.
 
-# **MOTIVATING EXAMPLE**
+# **EXAMPLE**
 
   Consider the DDE associated to the enumeration of $3$-constellations:
     
