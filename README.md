@@ -25,7 +25,7 @@ The Maple variable libname shall be set so that “ddesolver.mla” is
 located in a visible place.
 
 ```
-libname := ”/home/notarantonio/ddesolver/lib”, libname:
+libname := ”PATH_TO/ddesolver/lib”, libname:
 ```
 
 Once libname has been correctly set up, one executes in Maple
