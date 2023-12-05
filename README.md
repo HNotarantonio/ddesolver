@@ -9,7 +9,7 @@ Jehanne showed in $2006$ that when these equations are of a fixed point type in 
 an *algebraic series* (that is, there exists $R_u\in\mathbb{Q}[X, t, u]\setminus\{0\}$ such that $R_u(F(t, u), t, u)=0$).
 In the same paper, they proposed a systematic method for computing
 annihilating polynomials of these series: note that the usual interest lies in the algebraicity of 
-one of the specialized series (say $F(t, 1)$). Bostan, Safey El Din and the author of this package
+one of the specialized series (say of $F(t, 1)$). Bostan, Safey El Din and the author of this package
 designed in $2023$ new efficient algorithms for computing these witnesses of algebraicity. 
 
 The package **ddesolver** contains the implementations of these new algorithms.
