@@ -38,19 +38,19 @@ in order to load and use the package.
 
   Consider the DDE associated to the enumeration of 3-constellations:
     
-   ```math
+  ```math
      \begin{align*} F(t, u) = 1 + tuF(t, u)^3 &+ tu(2F(t, u) + F(t, 1))\frac{F(t, u)-F(t, 1)}{u-1}\\
            &+ tu\frac{F(t, u) - F(t, 1) - (u-1)\partial_uF(t, 1)}{(u-1)^2}.
      \end{align*}
-   ```
+  ```
             
   Multiplying the above functional equation by $(u-1)^2$ yields
   
-     ```math
-   \begin{align*}  0=(u-1)^2(1-F(t, u) + tuF(t, u)^3) &+ tu(u-1)(2F(t, u) + F(t, 1))(F(t, u)-F(t, 1))\\
-      &+  tu(F(t, u) - F(t, 1) - (u-1)\partial_uF(t, 1)).
-      \end{align*}
-      ```
+  ```math
+     \begin{align*}  0=(u-1)^2(1-F(t, u) + tuF(t, u)^3) &+ tu(u-1)(2F(t, u) + F(t, 1))(F(t, u)-F(t, 1))\\
+             &+  tu(F(t, u) - F(t, 1) - (u-1)\partial_uF(t, 1)).
+     \end{align*}
+  ```
       
   Note that the above rewrites in the form $P(F(t, u), F(t, 1), \partial_uF(t, 1), t, u)=0$,
   where $P\in\mathbb{Q}[x, z_0, z_1, t, u]$ is given by
