@@ -11,7 +11,7 @@ annihilating polynomials of these series. Bostan, Safey El Din and the author of
 recently designed new efficient algorithms for computing these witnesses of algebraicity. 
 The package ddesolver contains the implementations of these new algorithms.
 
-Want to have a detailed look at the associated tutorial paper ? Open https://mathexp.eu/notarantonio/papers/ddesolver.pdf  
+Have a look at the dedicated [tutorial paper](https://mathexp.eu/notarantonio/papers/ddesolver.pdf)!   
 
 
 # **INSTALLATION**
