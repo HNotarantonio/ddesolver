@@ -1,6 +1,6 @@
 # **INTRODUCTION**
 
-We introduce DDE-Solver, a Maple package designed for solving Discrete Differential
+We introduce ddesolver, a Maple package designed for solving Discrete Differential
 Equations (DDEs). These equations are functional equations relating algebraically a formal
 power series F(t, u) with polynomial coefficients in a “catalytic” variable u, with
 specializations of it with respect to the catalytic variable. Such equations appear in
@@ -16,7 +16,7 @@ Have a look at the dedicated [tutorial paper](https://mathexp.eu/notarantonio/pa
 
 # **INSTALLATION**
 
-DDE-Solver is available in the “.mla” format.
+ddesolver is available in the “.mla” format.
 
 The Maple variable libname shall be set so that “ddesolver.mla” is
 located in a visible place.
