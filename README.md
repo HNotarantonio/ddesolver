@@ -54,7 +54,10 @@ in order to load and use the package.
       
   Note that the above rewrites in the form $P(F(t, u), F(t, 1), \partial_uF(t, 1), t, u)=0$,
   where $P\in\mathbb{Q}[x, z_0, z_1, t, u]$ is given by
-    $P := (u-1)^2(1-x+tux^3) +tu(u-1)(2x+z_0)(x-z_0)+tu(x-z_0-(u-1)z_1)$.
+  
+  ```math
+    P := (u-1)^2(1-x+tux^3) +tu(u-1)(2x+z_0)(x-z_0)+tu(x-z_0-(u-1)z_1).
+  ```
     
   We continue the analysis with Maple
     
