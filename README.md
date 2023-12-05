@@ -36,27 +36,28 @@ in order to load and use the package.
 
 # **USING DDESOLVER**
 
-  Consider the DDE associated to the enumeration of~$3$-constellations:
+  Consider the DDE associated to the enumeration of 3-constellations:
     
    $F(t, u) = 1 + tuF(t, u)^3 + tu(2F(t, u) + F(t, 1))\frac{F(t, u)-F(t, 1)}{u-1}
             + tu\frac{F(t, u) - F(t, 1) - (u-1)\partial_uF(t, 1)}{(u-1)^2}.$
+            
     Multiplying the above functional equation by (u-1)^2 yields
      $0=(u-1)^2(1-F(t, u) + tuF(t, u)^3) + tu(u-1)(2F(t, u) + F(t, 1))(F(t, u)-F(t, 1))
       +  tu(F(t, u) - F(t, 1) - (u-1)\partial_uF(t, 1)).$
       Note that the above rewrites in the form $P(F(t, u), F(t, 1), \partial_uF(t, 1), t, u)=0$
-      for some~$P\in\mathbb{Q}[x, z_0, z_1, t, u]$ given by
+      for some $P\in\mathbb{Q}[x, z_0, z_1, t, u]$ given by
     $P := (u-1)^2(1-x+tux^3) +tu(u-1)(2x+z_0)(x-z_0)
     +tu(x-z_0-(u-1)z_1)$. We continue the analysis with Maple
     
-```P := (u-1)^2(1-x+tux^3) +tu(u-1)(2x+z_0)(x-z_0)+tu(x-z_0-(u-1)z_1):```
+    P := (u-1)^2(1-x+tux^3) +tu(u-1)(2x+z_0)(x-z_0)+tu(x-z_0-(u-1)z_1):
     
-```with(ddesolver):```
- 
-```annihilating\_polynomial(P, 2);```
- 
-```(16tz_0^2-8tz_0+t-16)(81t^2z_0^3-81t^2z_0^2+27t^2z_0+18tz_0^2-3t^2-66tz_0+47t+z_0-1)```
+    with(ddesolver):
 
-    Thus~$R := (16tz_0^2-8tz_0+t-16)(81t^2z_0^3-81t^2z_0^2+27t^2z_0+18tz_0^2-3t^2-66
-    tz_0+47t+z_0-1)$ is an annihilating polynomial of~$F(t, a)$.
+    annihilating\_polynomial(P, 2);
+ 
+    (16tz_0^2-8tz_0+t-16)(81t^2z_0^3-81t^2z_0^2+27t^2z_0+18tz_0^2-3t^2-66tz_0+47t+z_0-1)
+
+  Thus $R := (16tz_0^2-8tz_0+t-16)(81t^2z_0^3-81t^2z_0^2+27t^2z_0+18tz_0^2-3t^2-66
+    tz_0+47t+z_0-1)$ is an annihilating polynomial of $F(t, 1)$.
  
 
