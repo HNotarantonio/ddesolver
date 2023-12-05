@@ -1,4 +1,4 @@
-        INTRODUCTION
+# **INTRODUCTION**
 
 We introduce DDE-Solver, a Maple package designed for solving Discrete Differential
 Equations (DDEs). These equations are functional equations relating algebraically a formal
@@ -14,7 +14,7 @@ The package ddesolver contains the implementations of these new algorithms.
 Want to have a detailed look at the associated tutorial paper ? Have a look at https://mathexp.eu/notarantonio/papers/ddesolver.pdf  
 
 
-        INSTALLATION
+# **INSTALLATION**
 
 DDE-Solver is available in the “.mla” format.
 
