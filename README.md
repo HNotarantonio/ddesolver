@@ -40,7 +40,10 @@ in order to load and use the package.
 The function **annihilating_polynomial** takes as input $(P, k)$, where:
 
 - $P\in\mathbb{Q}[x, z_0, z_1, \ldots, z_{k-1}, t, u]$
-is a nonzero polynomial such that $P(F(t, u), F(t, 1), \partial_uF(t, 1), \ldots, \partial_u^{k-1}F(t, 1), t, u)=0$,
+is a nonzero polynomial such that
+```math
+P(F(t, u), F(t, 1), \partial_uF(t, 1), \ldots, \partial_u^{k-1}F(t, 1), t, u)=0,
+```
 - $k$ is the number of specialized series.
 
 Note that the specialization of the series can be at any point of $a\in\mathbb{Q}$.
