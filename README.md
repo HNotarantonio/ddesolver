@@ -34,7 +34,7 @@ with(ddesolver);
 in order to load and use the package.
 
 
-# **USING DDESOLVER**
+# **MOTIVATING EXAMPLE**
 
   Consider the DDE associated to the enumeration of 3-constellations:
     
