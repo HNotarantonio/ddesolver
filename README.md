@@ -36,7 +36,7 @@ in order to load and use the package.
 
 # **MOTIVATING EXAMPLE**
 
-  Consider the DDE associated to the enumeration of 3-constellations:
+  Consider the DDE associated to the enumeration of $3$-constellations:
     
   ```math
      \begin{align*} F(t, u) = 1 + tuF(t, u)^3 &+ tu(2F(t, u) + F(t, 1))\frac{F(t, u)-F(t, 1)}{u-1}\\
