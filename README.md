@@ -44,7 +44,8 @@ is a nonzero polynomial such that
 ```math
 P(F(t, u), F(t, 1), \partial_uF(t, 1), \ldots, \partial_u^{k-1}F(t, 1), t, u)=0,
 ```
-*It is important that the series of interest `F(t, 1)` corresponds to `z_0` and that the full series `F(t, u)` corresponds to `x`*
+* It is important that the series of interest $F(t, 1)$ corresponds to $z_0$ and that the full series $F(t, u)$ corresponds to $x$ *
+
 - $k$ is the number of specialized series.
 
 Note that the specialization of the series can be at any point of $a\in\mathbb{Q}$.
