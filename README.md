@@ -46,7 +46,7 @@ in order to load and use the package.
             
   Multiplying the above functional equation by $(u-1)^2$ yields
      ```math
-   \begin{aling*}  0=(u-1)^2(1-F(t, u) + tuF(t, u)^3) &+ tu(u-1)(2F(t, u) + F(t, 1))(F(t, u)-F(t, 1))\\
+   \begin{align*}  0=(u-1)^2(1-F(t, u) + tuF(t, u)^3) &+ tu(u-1)(2F(t, u) + F(t, 1))(F(t, u)-F(t, 1))\\
       &+  tu(F(t, u) - F(t, 1) - (u-1)\partial_uF(t, 1)).
       \end{align*}
       ```
