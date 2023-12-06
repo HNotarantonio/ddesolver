@@ -54,7 +54,7 @@ such that $R(t, F(t, 1))=0$.
 Note that in order to have a nonzero polynomial $R\in\mathbb{Q}[t, z_0]$ for $F(t, 1)$, it is mandatory that the assumptions related to Section $4.2$ in the [tutorial paper](https://mathexp.eu/notarantonio/papers/ddesolver.pdf)
 are full filled. 
 
-# **EXAMPLE**
+# **EXAMPLE: $3$-constellations** 
 
   Consider the DDE associated to the enumeration of $3$-constellations:
     
