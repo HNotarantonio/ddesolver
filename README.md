@@ -12,14 +12,14 @@ annihilating polynomials of these series: note that the usual interest lies in t
 one of the specialized series, say of $F(t, 1)$. [Alin Bostan](https://mathexp.eu/bostan/), [Mohab Safey El Din](https://www-polsys.lip6.fr/~safey/) and the author of this package
 designed in $2023$ new efficient algorithms for computing these witnesses of algebraicity. 
 
-The package **ddesolver** contains the implementations of these new algorithms.
+**ddesolver** contains the implementations of these new algorithms.
 
 Want to know more about ddesolver? Have a look at the dedicated [tutorial paper](https://mathexp.eu/notarantonio/papers/ddesolver.pdf)!   
 Want to more about the algorithms? Have a look [here](https://mathexp.eu/notarantonio/papers/reviewed_BoNoSa2023--HAL-ARXIV.pdf)!
 
 # **INSTALLATION**
 
-ddesolver is a [Maple](https://fr.maplesoft.com/) package available in the “.mla” format.
+**ddesolver** is a [Maple](https://fr.maplesoft.com/) package available in the “.mla” format.
 
 The Maple variable [libname](https://fr.maplesoft.com/support/help/maple/view.aspx?path=libname&L=F) shall be set so that “ddesolver.mla” is
 located in a visible place.
