@@ -51,7 +51,7 @@ Note that the specialization of the series can be at any point of $a\in\mathbb{Q
 The function **annihilating_polynomial** outputs a nonzero polynomial $R\in\mathbb{Q}[t, z_0]$
 such that $R(t, F(t, 1))=0$. 
 
-Note that in order to have a nonzero polynomial $R\in\mathbb{Q}[t, z_0]$ for $F(t, 1)$, it is mandatory that the assumptions related to Section $4.2$ in the [turotial paper](https://mathexp.eu/notarantonio/papers/ddesolver.pdf)
+Note that in order to have a nonzero polynomial $R\in\mathbb{Q}[t, z_0]$ for $F(t, 1)$, it is mandatory that the assumptions related to Section $4.2$ in the [tutorial paper](https://mathexp.eu/notarantonio/papers/ddesolver.pdf)
 are full filled. 
 
 # **EXAMPLE**
