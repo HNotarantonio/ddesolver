@@ -95,7 +95,7 @@ are full filled.
 # **OPTIONS**
 
 It is possible to benefit in practice from two options: the choice of the `algorithm`, and the
-choice of the `variable` (either $t$ or $z_0$) on which we perform evaluation–interpolation
+choice of the `variable` (either $t$ or $z_0$) on which we perform evaluation–interpolation.
 
 **Choice of the algorithm:** Four algorithms (described in Section $4$ of the [tutorial paper](https://mathexp.eu/notarantonio/papers/ddesolver.pdf)) are implemented: "duplication", "elimination",
 "geometry" (only when $k = 2$) and "hybrid". By default, the algorithm used is "elimination".
