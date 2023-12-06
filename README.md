@@ -106,6 +106,6 @@ Note that these two options must be either not specified at all, or specified in
 
 **Example:** We continue with the enumeration of $3$-constellations, this time with the options `algorithm = "geometry"` and `variable = z0`.
 
-    annihilating_polynomial(P , 2, "geometry" , z0);
+    annihilating_polynomial(P, 2, "geometry", z0);
     (16tz0^2-8tz0+t-16)(81t^2z0^3-81t^2z0^2+27t^2z0+18tz0^2-3t^2-66tz0+47t+z0-1)
     
