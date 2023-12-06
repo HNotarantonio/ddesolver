@@ -101,8 +101,7 @@ choice of the `variable` (either $t$ or $z_0$) on which we perform evaluation–
 "geometry" (only when $k = 2$) and "hybrid". By default, the algorithm used is "elimination".
 
 **Choice of the variable:** The two choices are $t$ and $z_0$. The default choice is $t$.
-The choice of the algorithm and of the variable on which we perform evaluation–
-interpolation can be made by executing `annihilating_polynomial(P , k, algorithm, variable)`.
+The choice of the algorithm and of the variable on which we perform evaluation-interpolation can be made by executing `annihilating_polynomial(P , k, algorithm, variable)`.
 Note that these two options must be either not specified at all, or specified in the same call.
 
 **Example:** We continue with the enumeration of $3$-constellations, this time with the options `algorithm = "geometry"` and `variable=z0`.
