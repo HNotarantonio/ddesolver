@@ -92,7 +92,7 @@ are full filled.
   Thus $R := (16tz_0^2-8tz_0+t-16)(81t^2z_0^3-81t^2z_0^2+27t^2z_0+18tz_0^2-3t^2-66
     tz_0+47t+z_0-1)$ annihilates the series $F(t, 1)$.
  
-# ** OPTIONS**
+# **OPTIONS**
 
 **Choice of the algorithm:** Four algorithms (described in the tutorial paper) are implemented: "duplication", "elimination",
 "geometry" (only when $k = 2$) and "hybrid". By default, the algorithm used is "elimination".
