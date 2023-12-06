@@ -48,8 +48,11 @@ P(F(t, u), F(t, 1), \partial_uF(t, 1), \ldots, \partial_u^{k-1}F(t, 1), t, u)=0,
 
 Note that the specialization of the series can be at any point of $a\in\mathbb{Q}$. Also, it is important that the series of interest $F(t, 1)$ corresponds to $z_0$ and that the full series $F(t, u)$ corresponds to $x$.
 
-The function **annihilating_polynomial** outputs, when the [assumptions](https://mathexp.eu/notarantonio/papers/reviewed_BoNoSa2023--HAL-ARXIV.pdf) related to the algorithm used are full filled (see the [tutorial paper](https://mathexp.eu/notarantonio/papers/ddesolver.pdf) for details on the selection of the algorithm to apply), a nonzero polynomial $R\in\mathbb{Q}[t, z_0]$
-such that $R(t, F(t, 1))=0$.
+The function **annihilating_polynomial** outputs a nonzero polynomial $R\in\mathbb{Q}[t, z_0]$
+such that $R(t, F(t, 1))=0$. 
+
+Note that in order to have a nonzero polynomial $R\in\mathbb{Q}[t, z_0]$ for $F(t, 1)$, it is mandatory that the assumptions related to Section $4.2$ in the [turotial paper](https://mathexp.eu/notarantonio/papers/ddesolver.pdf)
+are full filled. 
 
 # **EXAMPLE**
 
