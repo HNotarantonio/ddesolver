@@ -92,4 +92,18 @@ are full filled.
   Thus $R := (16tz_0^2-8tz_0+t-16)(81t^2z_0^3-81t^2z_0^2+27t^2z_0+18tz_0^2-3t^2-66
     tz_0+47t+z_0-1)$ annihilates the series $F(t, 1)$.
  
+# ** OPTIONS**
 
+**Choice of the algorithm:** Four algorithms (described in the tutorial paper) are implemented: "duplication", "elimination",
+"geometry" (only when $k = 2$) and "hybrid". By default, the algorithm used is "elimination".
+
+**Choice of the variable:** The two choices are $t$ and $z_0$. The default choice is $t$.
+The choice of the algorithm and of the variable on which we perform evaluation–
+interpolation can be made by executing `annihilating polynomial(P , k, algorithm, variable)`.
+Note that these two options must be either not specified at all, or specified in the same call.
+
+**Example:** We continue with the enumeration of $3$-constellations with `algorithm = "geometry"` and `variable=$z_0$`.
+
+    annihilating polynomial(P , 2, "geometry" , z_0);
+    (16tz_0^2-8tz_0+t-16)(81t^2z_0^3-81t^2z_0^2+27t^2z_0+18tz_0^2-3t^2-66tz_0+47t+z_0-1)
+    
