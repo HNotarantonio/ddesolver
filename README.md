@@ -94,7 +94,7 @@ are full filled.
  
 # **OPTIONS**
 
-**Choice of the algorithm:** Four algorithms (described in the tutorial paper) are implemented: "duplication", "elimination",
+**Choice of the algorithm:** Four algorithms (described in Section $4$ of the [tutorial paper](https://mathexp.eu/notarantonio/papers/ddesolver.pdf)) are implemented: "duplication", "elimination",
 "geometry" (only when $k = 2$) and "hybrid". By default, the algorithm used is "elimination".
 
 **Choice of the variable:** The two choices are $t$ and $z_0$. The default choice is $t$.
