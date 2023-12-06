@@ -19,9 +19,9 @@ Want to more about the algorithms? Have a look [here](https://mathexp.eu/notaran
 
 # **INSTALLATION**
 
-ddesolver is available in the “.mla” format.
+ddesolver is a [Maple](https://fr.maplesoft.com/) package available in the “.mla” format.
 
-The Maple variable libname shall be set so that “ddesolver.mla” is
+The Maple variable [libname](https://fr.maplesoft.com/support/help/maple/view.aspx?path=libname&L=F) shall be set so that “ddesolver.mla” is
 located in a visible place.
 
 ```
