@@ -1423,8 +1423,12 @@ end proc: # stickelberger2
 #		 var : z0 or t
 #	NB: Do not hesitate to modify the imput polynomial system, especially the saturation equation.
 annihilating_polynomial := proc(P, k, algo:={}, var:={})
-   local S, sat, i, j, algorithm, algorithm2, principal_var, second_var;
+   local S, sat, i, j, algorithm, algorithm2, principal_var, second_var, Q;
 
+   if k = 1 then 
+	Q := factors(discrim(P, x));
+	return discrim(mul(Q[2][i][1], i=1..nops(Q[2])), u)
+   end if:
    # Default implementation
    algorithm := "elimination";
    second_var := t;
