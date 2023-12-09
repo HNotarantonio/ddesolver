@@ -38,16 +38,6 @@ brut_force_elim, hgp, elim_without_dup, stickelberger2, generate:
 
 
 
-
-
-
-kernelopts(numcpus = 2);
-infolevel[Groebner] := 3;
-
-
-
-
-
 #############################################################################################
 #############################################################################################
 Euclide := proc(A, B, degstop, X, p)
@@ -1427,7 +1417,7 @@ annihilating_polynomial := proc(P, k, algo:={}, var:={})
 
    if k = 1 then 
 	Q := factors(discrim(P, x));
-	return discrim(mul(Q[2][i][1], i=1..nops(Q[2])), u)
+	return factor(discrim(mul(Q[2][i][1], i=1..nops(Q[2])), u));
    end if:
    # Default implementation
    algorithm := "elimination";
