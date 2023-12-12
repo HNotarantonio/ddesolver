@@ -157,28 +157,37 @@ rat_interp := proc(List_Spe_Pols, points, principal_var, second_var, p)
 #                  and we take the squarefree part of the numerator of this interpolation.
 #	         We denote by pol this output.
 ############################################
-	   local pol, deg, i, L, j, Pol_Buffer, F;
+	   local pol, pol2, deg, coef, lc, i, L, j, Pol_Buffer, F;
 	   
 	   pol := 0;
 	       #lprint(List_Spe_Pols, points, p);
 	   deg := degree(List_Spe_Pols[1], principal_var);
 
-	   for i from 0 to deg do
+	   for i from 0 to (deg-1) do
 	       L := [seq(coeff(List_Spe_Pols[j], principal_var, i),
 	       	    			      j = 1..nops(List_Spe_Pols))];
 	       pol := pol +
-	       (rational_interpolation(points, L, second_var, p))*(principal_var)^i;
+	       (rational_interpolation(points, L, second_var, p))*(principal_var)^i mod p;
 	   od;
-	   ## rational interpolation done
 
+	   pol := pol + (principal_var)^deg;
 
-	   pol := numer(pol) mod p;
+	   L := [seq(denom(coeff(pol, principal_var, i)), i=0..(deg-1))]:
+	   lc := Factor(Lcm(op(L)) mod p) mod p;
+
+	   pol2 := 0;
+	   for i from 0 to deg do
+	       coef  := (numer(coeff(pol, principal_var, i)))
+	       	     	* Normal(lc/denom(coeff(pol, principal_var, i))) mod p;
+	       pol2  := pol2 + coef*(principal_var)^i mod p;
+	   od: 
+
 	   ## we now select only the terms in which principal_var appears.
-	   F := Factors(pol) mod p;
+	   F := Factors(pol2) mod p;
 	   L := [seq(F[2][j][1], j = 1..nops(F[2]))];
-	   pol := expand(mul(select(has, L, principal_var))) mod p;
-
-	   return pol;
+  	   pol2 := mul(L) mod p;
+	   
+	   return expand(pol2) mod p
 end proc: # rat_interp
 #############################################################################################
 #############################################################################################
