@@ -52,7 +52,7 @@ The function **annihilating_polynomial** outputs a nonzero polynomial $R\in\math
 such that $R(t, F(t, 1))=0$. 
 
 Note that in order to have a nonzero polynomial $R\in\mathbb{Q}[t, z_0]$ for $F(t, 1)$, it is mandatory that the assumptions related to Section $4.2$ in the [tutorial paper](https://mathexp.eu/notarantonio/papers/ddesolver.pdf)
-are full filled. 
+are fullfilled. 
 
 # **EXAMPLE: Solving the DDE of $3$-constellations** 
 
