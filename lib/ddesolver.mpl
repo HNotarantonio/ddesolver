@@ -1418,52 +1418,60 @@ end proc: # stickelberger2
 #	       k: the order k of the DDE
 #	       Options:
 #		 algo: {identical("elimination"), identical("geometry"),
-#			identical("hgp"), identical("duplication")},
+#			identical("hybrid"), identical("duplication")},
 #		 var : z0 or t
 #	NB: Do not hesitate to modify the imput polynomial system, especially the saturation equation.
-annihilating_polynomial := proc(P, k, algo:={}, var:={})
-   local S, sat, i, j, algorithm, algorithm2, principal_var, second_var, Q;
+annihilating_polynomial := proc(P, k, var, algo:={}, variable:={})
+   local S, sat, i, j, algorithm, algorithm2, principal_var, second_var, Psub, Q;
 
-   if k = 1 then 
-	Q := factors(discrim(P, x));
-	return factor(discrim(mul(Q[2][i][1], i=1..nops(Q[2])), u));
+   if k = 1 then
+        if degree(P, var[1]) > 1 then
+	    Q := factors(discrim(P, var[1]));
+  	    return factor(discrim(mul(Q[2][i][1], i=1..nops(Q[2])), var[-1]))
+	fi:
+	if degree(P, var[1]) = 1 then
+	    return resultant(coeff(P, var[1], 1), P, var[-1])
+	fi:
    end if:
    # Default implementation
    algorithm := "elimination";
+   Psub := subs(seq(var[i] = cat(b, 1000+i), i=1..nops(var)), P);
+   Psub := subs(cat(b, 1001) = x, seq(cat(b, 1000+i) = cat(z, i-2), i=2..(nops(var)-2)),
+   	   	       	  cat(b, 1000+(nops(var)-1)) = t, cat(b, 1000+(nops(var))) = u, Psub);
    second_var := t;
 
    # Modifications of the default implementation
-   if nops({algo, var}) = 2 then
-      algorithm2, second_var := algo, var;
+   if nops({algo, variable}) = 2 then
+      algorithm2, second_var := algo, variable;
    end if;
-   if evalb(algorithm2 in {"elimination", "hgp", "geometry", "duplication"}) = true then
+   if evalb(algorithm2 in {"elimination", "hybrid", "geometry", "duplication"}) = true then
       algorithm := algorithm2;
    end if;
    
    principal_var := op({z0, t} minus {second_var});
 
-   sat := factors(subs(t = 0, diff(P, x)));
+   sat := factors(subs(t = 0, diff(Psub, x)));
    sat := mul(sat[2][i][1], i=1..nops(sat[2]));
    
    if algorithm = "duplication" then
-      S := [seq(op(subs(x = cat(x, i), u = cat(u, i), [P, diff(P, x), diff(P, u)])), i = 1..k),
+      S := [seq(op(subs(x = cat(x, i), u = cat(u, i), [Psub, diff(Psub, x), diff(Psub, u)])), i = 1..k),
       	   	 m*mul(mul((cat(u, i) - cat(u, j)), i = 1..(j - 1)), j = 1..k)
 		  *mul(subs(u = cat(u, j), sat*u), j = 1..k)*t-1];
-      return elim_pol_1dim(S, principal_var, second_var, k)
+      return subs(z0 = var[2], t = var[-2], elim_pol_1dim(S, principal_var, second_var, k))
    end if;
 
-   if algorithm = "hgp" then
-      S := [P, diff(P, x), diff(P, u), m*sat*u*t-1];
-      return hgp(S, P, op({solve(sat, u)}), k)
+   if algorithm = "hybrid" then
+      S := [Psub, diff(Psub, x), diff(Psub, u), m*sat*u*t-1];
+      return subs(z0 = var[2], t = var[-2], hgp(S, Psub, op({solve(sat, u)}), k))
    end if;
 
    if algorithm = "geometry" then
-      S := [P, diff(P, x), diff(P, u), m*sat*u*t-1];
-      return stickelberger2(S, principal_var, second_var)
+      S := [Psub, diff(Psub, x), diff(Psub, u), m*sat*u*t-1];
+      return subs(z0 = var[2], t = var[-2], stickelberger2(S, principal_var, second_var))
    end if;
 
-   S := [P, diff(P, x), diff(P, u), m*sat*u*t-1];
-   return elim_without_dup(S, principal_var, second_var, k)
+   S := [Psub, diff(Psub, x), diff(Psub, u), m*sat*u*t-1];
+   return subs(z0 = var[2], t = var[-2], elim_without_dup(S, principal_var, second_var, k))
 
 end proc: # annihilating_polynomial
 #############################################################################################
