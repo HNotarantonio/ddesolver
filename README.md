@@ -85,7 +85,7 @@ are fullfilled.
     
     with(ddesolver):
 
-    annihilating_polynomial(P, 2);
+    annihilating_polynomial(P, 2, [x, z0, z1, t, u]);
  
     (16tz0^2-8tz0+t-16)(81t^2z0^3-81t^2z0^2+27t^2z0+18tz0^2-3t^2-66tz0+47t+z0-1)
 
@@ -101,11 +101,11 @@ choice of the `variable` (either $t$ or $z_0$) on which we perform evaluation–
 "geometry" (only when $k = 2$) and "hybrid". By default, the algorithm used is "elimination".
 
 **Choice of the variable:** The two choices are $t$ and $z_0$. The default choice is $t$.
-The choice of the algorithm and of the variable on which we perform evaluation-interpolation can be made by executing `annihilating_polynomial(P , k, algorithm, variable)`.
+The choice of the algorithm and of the variable on which we perform evaluation-interpolation can be made by executing `annihilating_polynomial(P , k, var, algorithm, variable)`.
 Note that these two options must be either not specified at all, or specified in the same call.
 
 **Example:** We continue with the enumeration of $3$-constellations, this time with the options `algorithm = "geometry"` and `variable = z0`.
 
-    annihilating_polynomial(P, 2, "geometry", z0);
+    annihilating_polynomial(P, 2, [x, z0, z1, t, u], "geometry", z0);
     (16tz0^2-8tz0+t-16)(81t^2z0^3-81t^2z0^2+27t^2z0+18tz0^2-3t^2-66tz0+47t+z0-1)
     
