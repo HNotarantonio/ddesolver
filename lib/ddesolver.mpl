@@ -4,7 +4,7 @@ description "DDE-Solver, a Maple package for Discrete Differential Equations";
 
 option package;
 
-export annihilating_polynomial:
+export algebraic_single:
 
 local Euclide, rational_interpolation, rat_interp, stickelberger2modp, elim_without_dup_modp, 
 Reconstruction_Elimination_Pol_QQ1, elim_pol_1dim_main, elim_pol_1dim,
@@ -1421,7 +1421,7 @@ end proc: # stickelberger2
 #			identical("hybrid"), identical("duplication")},
 #		 var : z0 or t
 #	NB: Do not hesitate to modify the imput polynomial system, especially the saturation equation.
-annihilating_polynomial := proc(P, k, var, algo:={}, variable:={})
+algebraic_single := proc(P, k, var, algo:={}, variable:={})
    local S, sat, i, j, algorithm, algorithm2, principal_var, second_var, Psub, Q;
 
    if k = 1 then
@@ -1473,7 +1473,7 @@ annihilating_polynomial := proc(P, k, var, algo:={}, variable:={})
    S := [Psub, diff(Psub, x), diff(Psub, u), m*sat*u*t-1];
    return subs(z0 = var[2], t = var[-2], elim_without_dup(S, principal_var, second_var, k))
 
-end proc: # annihilating_polynomial
+end proc: # algebraic_single
 #############################################################################################
 #############################################################################################
 
