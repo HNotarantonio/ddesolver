@@ -37,7 +37,7 @@ with(ddesolver);
 in order to load and use the package.
 
 # **INPUT/OUTPUT FORMAT**
-The function **annihilating_polynomial** takes as input $(P, k)$, where:
+The function **algebraic_single** takes as input $(P, k)$, where:
 
 - $P\in\mathbb{Q}[x, z_0, z_1, \ldots, z_{k-1}, t, u]$
 is a nonzero polynomial such that
@@ -48,7 +48,7 @@ P(F(t, u), F(t, 1), \partial_uF(t, 1), \ldots, \partial_u^{k-1}F(t, 1), t, u)=0,
 
 Note that the specialization of the series can be at any point of $a\in\mathbb{Q}$. Also, it is important that the series of interest $F(t, 1)$ corresponds to $z_0$ and that the full series $F(t, u)$ corresponds to $x$.
 
-The function **annihilating_polynomial** outputs a nonzero polynomial $R\in\mathbb{Q}[t, z_0]$
+The function **algebraic_single** outputs a nonzero polynomial $R\in\mathbb{Q}[t, z_0]$
 such that $R(t, F(t, 1))=0$. 
 
 Note that in order to have a nonzero polynomial $R\in\mathbb{Q}[t, z_0]$ for $F(t, 1)$, it is mandatory that the assumptions related to Section $4.2$ in the [tutorial paper](https://mathexp.eu/notarantonio/papers/ddesolver.pdf)
