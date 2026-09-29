@@ -88,7 +88,7 @@ are fullfilled.
     
     algebraic_single(P, 2, [x, z0, z1, t, u]);
  
-    (16tz0^2-8tz0+t-16)(81t^2z0^3-81t^2z0^2+27t^2z0+18tz0^2-3t^2-66tz0+47t+z0-1)
+    # It should output: (16tz0^2-8tz0+t-16)(81t^2z0^3-81t^2z0^2+27t^2z0+18tz0^2-3t^2-66tz0+47t+z0-1)
 
   Thus $R := (16tz_0^2-8tz_0+t-16)(81t^2z_0^3-81t^2z_0^2+27t^2z_0+18tz_0^2-3t^2-66
     tz_0+47t+z_0-1)$ annihilates the series $F(t, 1)$.
