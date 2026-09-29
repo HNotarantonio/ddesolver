@@ -1188,7 +1188,7 @@ hgp := proc(S, P, a, k)
 	      time_expand := time[real]() - sd;  sd := time[real]();
 
 	  
-	      M := subs(T(t) = z0, gfun[seriestoalgeq](Fa, T(t))[1]);
+	      M := subs(T(t) = z0, gfun[seriestoalgeq](Fa, T(t)));
 	      time_guess := time[real]() - sd; sd := time[real]();
 
 	      if (convert(series(subs(z0 = Fa, M), t, 2*bt*bz0+1), polynom) = 0) then
