@@ -81,7 +81,7 @@ are fullfilled.
     
   We continue the analysis with Maple
     
-    P := (u-1)^2(1-x+tux^3) +tu(u-1)(2x+z0)(x-z0)+tu(x-z0-(u-1)z1):
+    P := (u-1)^2*(1-x+t*u*x^3)+t*u*(u-1)*(2*x+z0)*(x-z0)+t*u*(x-z0-(u-1)*z1):
     
     with(ddesolver):
 
@@ -90,8 +90,8 @@ are fullfilled.
  
     (16tz0^2-8tz0+t-16)(81t^2z0^3-81t^2z0^2+27t^2z0+18tz0^2-3t^2-66tz0+47t+z0-1)
 
-  Thus $R := (16*t*z_0^2-8*t*z_0+t-16)*(81*t^2*z_0^3-81*t^2*z_0^2+27*t^2*z_0+18*t*z_0^2-3*t^2-66
-    *t*z_0+47*t+z_0-1)$ annihilates the series $F(t, 1)$.
+  Thus $R := (16tz_0^2-8tz_0+t-16)(81t^2z_0^3-81t^2z_0^2+27t^2z_0+18tz_0^2-3t^2-66
+    tz_0+47t+z_0-1)$ annihilates the series $F(t, 1)$.
  
 # **OPTIONS**
 
