@@ -1423,8 +1423,16 @@ end proc: # stickelberger2
 #	NB: Do not hesitate to modify the imput polynomial system, especially the saturation equation.
 algebraic_single := proc(P, k, var, algo:={}, variable:={})
    local S, sat, i, j, algorithm, algorithm2, principal_var, second_var, Psub, Q;
-   if k <> nops(var) then print("There might be a problem with either k or the variables you choose. Please check that you indicated
-k+3 variable in total."); fi:
+     if evalb(indets(P) = {op(var)}) = false then
+      print("There might be a problem with the set of variables you chose: the variables in your input polynomial is not equal to your input variables.");
+      print("Stopping the execution..."); return FAIL;
+   fi:
+
+   if evalb(nops(var) = k+3) = false then
+      print("There might be a problem with either the order k of the DDE or with the set of variables you chose. Please check that you indicated k+3 variables in total.");
+      print("Stopping the execution..."); return FAIL;
+   fi:
+ 
    if k = 1 then
         if degree(P, var[1]) > 1 then
 	    Q := factors(discrim(P, var[1]));
@@ -1444,12 +1452,13 @@ k+3 variable in total."); fi:
    # Modifications of the default implementation
    if nops({algo, variable}) = 2 then
       algorithm2, second_var := algo, variable;
+      if evalb(algorithm2 in {"elimination", "hybrid", "geometry", "duplication"}) = true then
+      	 algorithm := algorithm2;
+      else print("The algorithm indicated is not part of the proposed algorithms --duplication--, --elimination--, --geometry--, --hybrid--.");
+	   print("Stopping the execution..."); return FAIL;
+   	   end if;
    end if;
-   if evalb(algorithm2 in {"elimination", "hybrid", "geometry", "duplication"}) = true then
-      algorithm := algorithm2;
-   else print("The algorithm indicated is not part of the proposed algorithms --duplication--, --elimination--, --geometry--, --hybrid--");
-	    print("Performing instead the default --elimination-- algorithm");
-   end if;
+   
    
    principal_var := op({z0, t} minus {second_var});
 
